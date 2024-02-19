@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in & Sign-up Page</title>
+    <link rel="stylesheet" href="./Style_2.css">
+    <style>
+        /* Add styles for the active button */
+        #login-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sign Up Content -->
+    <div class="container" id="content01">
+        <div class="img-slider">
+            <h2>Welcome to WhatsappChatBot</h2>
+            <p>virtual assistant designed to make communication easier</p>
+            <img src="images/mainbot.jpg" alt="img">
+        </div>
+        <div class="content">
+            <h2>Get Started</h2>
+            <p>Already have an account? <a href="#" id="login" onclick="showSignIn()">Sign In</a></p>
+            <form id="form">
+                <!-- ... (existing sign-up form fields) ... -->
+                <label for="name" id="nlabel">Name</label> <br>
+                <input type="text" id="fname" placeholder="Your name " autocomplete="off"> <br>
+                <label for="email" id="elabel">Email</label> <br>
+                <input type="email" id="eemail" placeholder="Your email" autocomplete="off"> <br>
+                <label for="password" id="plabel">Password</label> <br>
+                <input type="password" name="password" id="lpassword"> <br>
+                <button type="submit" onclick="UserRegister()" id="btn">Sign Up</button>
+            </form>
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign In Content -->
+    <div class="container display" id="content02">
+        <div class="img-slider">
+            <h2>Welcome to WhatsappChatBot</h2>
+            <p>virtual assistant designed to make communication easier</p>
+            <img src="images/whatsappbot.png" alt="img" class="sign-img">
+            
+        </div>
+        <div class="content">
+            <h2>Log In</h2>
+            <p>Don't have an account? <a href="#" id="sign-up" onclick="showSignUp()">Sign up</a></p>
+            <form action="" id="form">
+                <!-- ... (existing sign-in form fields) ... -->
+                <label for="email" id="elabel">Email</label> <br>
+                <input type="email" id="eemail" placeholder="Lucifer@gmail.com" autocomplete="off"> <br>
+                <label for="password" id="plabel">Password</label> <br>
+                <input type="password" name="password" id="lpassword"> <br>
+                <button type="submit" onclick="SignIn()" id="btn1">Log In</button>
+            </form>
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="data.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="server.js"></script>
+
+    
+    <script>
+        // JavaScript to toggle between sign-up and sign-in sections
+        function showSignUp() {
+            document.getElementById('content01').style.display = 'block';
+            document.getElementById('content02').style.display = 'none';
+            document.getElementById('login').style.backgroundColor = '';
+            document.getElementById('sign-up').style.backgroundColor = '#4CAF50';
+        }
+
+        function showSignIn() {
+            document.getElementById('content01').style.display = 'none';
+            document.getElementById('content02').style.display = 'block';
+            document.getElementById('sign-up').style.backgroundColor = '';
+            document.getElementById('login').style.backgroundColor = '#4CAF50';
+        }
+
+        function SignIn() {
+            // Add your login logic here
+
+            // Assuming successful login, redirect to WhatsApp
+            console.log('Attempting to redirect to WhatsApp');
+            window.location.href = 'https://wa.me/+14155238886'; 
+            
+        }
+    </script>
+</body>
+</html>
